@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<!-- 解决文档警告：
+	http://stackoverflow.com/questions/5731162/xml-schema-or-dtd-for-logback-xml
+ -->
+<configuration debug="true"> 
+	<!-- logback默认的基本配置，输出到控制台
+		更详细的配置可以参考官方文档：
+		https://logback.qos.ch/manual/configuration.html
+	 -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
+    <!-- encoders are  by default assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="debug">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
